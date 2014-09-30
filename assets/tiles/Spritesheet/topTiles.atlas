@@ -1,0 +1,15 @@
+{
+    "topTiles-0.png":
+    {
+		"tileAutumn_tile.png": [0, 0, 55, 57],
+		"tileDirt_tile.png": [55, 0, 55, 57],
+		"tileGrass_tile.png": [110, 0, 55, 57],
+		"tileLava_tile.png": [55, 1, 55, 57],
+		"tileMagic_tile.png": [55, 4, 55, 57],
+		"tileRock_tile.png": [55, 7, 55, 57],
+		"tileSand_tile.png": [110, 7, 55, 57],
+		"tileSnow_tile.png": [0, 1, 55, 57],
+		"tileStone_tile.png": [0, 4, 55, 57],
+		"tileWater_tile.png": [0, 7, 55, 57],
+	}
+}

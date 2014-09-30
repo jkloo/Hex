@@ -1,0 +1,10 @@
+{
+    "aliens-0.png":
+    {
+    	"alienBeige.png": [40, 0, 40, 66],
+    	"alienBlue.png": [40, 6, 40, 66],
+    	"alienGreen.png": [0, 6, 40, 66],
+    	"alienPink.png": [0, 0, 40, 66],
+    	"alienYellow.png": [0, 2, 40, 60]
+    }
+}

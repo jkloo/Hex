@@ -1,0 +1,26 @@
+{
+    "trees-0.png":
+    {
+		"pineAutumn_high.png": [0, 1, 30, 99],
+		"pineAutumn_low.png": [0, 9, 30, 79],
+		"pineAutumn_mid.png": [0, 1, 30, 101],
+		"pineBlue_high.png": [0, 0, 30, 99],
+		"pineBlue_low.png": [0, 2, 30, 79],
+		"pineBlue_mid.png": [0, 0, 30, 101],
+		"pineGreen_high.png": [0, 1, 30, 99],
+		"pineGreen_low.png": [0, 2, 30, 79],
+		"pineGreen_mid.png": [0, 8, 30, 101],
+		"treeAutumn_high.png": [30, 7, 27, 107],
+		"treeAutumn_low.png": [30, 0, 27, 87],
+		"treeAutumn_mid.png": [30, 3, 27, 107],
+		"treeBlue_high.png": [30, 6, 27, 107],
+		"treeBlue_low.png": [30, 9, 27, 87],
+		"treeBlue_mid.png": [30, 2, 27, 107],
+		"treeCactus_1.png": [0, 0, 32, 66],
+		"treeCactus_2.png": [30, 2, 29, 66],
+		"treeCactus_3.png": [0, 6, 32, 66],
+		"treeGreen_high.png": [32, 0, 27, 107],
+		"treeGreen_low.png": [30, 8, 27, 87],
+		"treeGreen_mid.png": [30, 5, 27, 107],
+	}
+}
