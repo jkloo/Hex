@@ -1,11 +1,12 @@
 #:kivy 1.8.0
 
 <Tile>:
-    size: 100, 100
+    size: self.scale, self.scale
+    pos: self.grid_x * self.scale, self.grid_y * self.scale
     canvas:
         Rectangle:
-            pos: self.pos
-            size: self.size
-            source: 'assets/tiles/Tiles/tileDirt.png'
+            pos: root.pos
+            size: root.size
+            source: root.source
 
 <Grid>:
