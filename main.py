@@ -1,30 +1,14 @@
+#!/usr/bin/env python
 
-import os
-import random
+"""Main module. """
 
 from kivy.app import App
-from kivy.uix.widget import Widget
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.floatlayout import FloatLayout
-from kivy.uix.button import Button
 from kivy.properties import (NumericProperty,
                              StringProperty)
 
-
-class Tile(Widget):
-    grid_x = NumericProperty(0)
-    grid_y = NumericProperty(0)
-    scale = NumericProperty(25)
-    source = StringProperty()
-
-    @staticmethod
-    def new_tile(grid_x, grid_y, scale, source):
-        tile = Tile(size_hint=(None, None))
-        tile.scale = scale
-        tile.grid_x = grid_x
-        tile.grid_y = grid_y
-        tile.source = source
-        return tile
+from tile import FieldTile
 
 
 class Grid(FloatLayout):
@@ -38,10 +22,7 @@ class Grid(FloatLayout):
         self.tiles_scale = scale
         for j in range(ny):
             for i in range(nx):
-                y = random.randint(0,12)
-                x = random.randint(0,7)
-                source = 'assets/tuxemon/tuxemon-{}-{}.png'.format(y, x)
-                self.add_widget(Tile.new_tile(i, j, scale, source))
+                self.add_widget(FieldTile(i, j, scale))
 
 
 class HexApp(App):
