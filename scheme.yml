@@ -1,0 +1,29 @@
+grass:
+    sources:
+        - "assets/tuxemon/grass/one.png"
+        - "assets/tuxemon/grass/two.png"
+    all: 
+        - grass
+        - flower
+    left:
+        - rightsand
+    up:
+        - topsand
+    right:
+        - rightsand
+    down:
+        - bottomsand
+
+flower:
+    sources:
+        - "assets/tuxemon/grass/flower/*.png"
+    all:
+        - grass
+        - flower
+
+sand:
+    sources:
+        - "assets/tuxemon/sand/one.png"
+        - "assets/tuxemon/sand/two.png"
+    all:
+        - sand

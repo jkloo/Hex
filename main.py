@@ -22,7 +22,7 @@ class Grid(FloatLayout):
         self.tiles_scale = scale
         for j in range(ny):
             for i in range(nx):
-                self.add_widget(SandTile(i, j, scale))
+                self.add_widget(FieldTile(i, j, scale))
 
 
 class HexApp(App):
