@@ -30,25 +30,25 @@ class Tile(Widget):
 
 
 class GrassTile(Tile):
-    _sources = [os.path.join(ASSETS_DIR, 'tuxemon', 'grass', 'one.png'),
-                os.path.join(ASSETS_DIR, 'tuxemon', 'grass', 'two.png')]
+    _sources = [os.path.join(ASSETS_DIR, 'tiles', 'grass', 'one.png'),
+                os.path.join(ASSETS_DIR, 'tiles', 'grass', 'two.png')]
     _weights = [50, 50]
 
 
 class SandTile(Tile):
-    _sources = [os.path.join(ASSETS_DIR, 'tuxemon', 'sand', 'one.png'),
-                os.path.join(ASSETS_DIR, 'tuxemon', 'sand', 'two.png')]
+    _sources = [os.path.join(ASSETS_DIR, 'tiles', 'sand', 'one.png'),
+                os.path.join(ASSETS_DIR, 'tiles', 'sand', 'two.png')]
 
 class FlowerTile(Tile):
-    _sources = [os.path.join(ASSETS_DIR, 'tuxemon', 'grass', 'flower', 'red', 'one.png'),
-                os.path.join(ASSETS_DIR, 'tuxemon', 'grass', 'flower', 'red', 'two.png'),
-                os.path.join(ASSETS_DIR, 'tuxemon', 'grass', 'flower', 'red', 'three.png'),
-                os.path.join(ASSETS_DIR, 'tuxemon', 'grass', 'flower', 'blue', 'one.png'),
-                os.path.join(ASSETS_DIR, 'tuxemon', 'grass', 'flower', 'blue', 'two.png'),
-                os.path.join(ASSETS_DIR, 'tuxemon', 'grass', 'flower', 'blue', 'three.png'),
-                os.path.join(ASSETS_DIR, 'tuxemon', 'grass', 'flower', 'yellow', 'one.png'),
-                os.path.join(ASSETS_DIR, 'tuxemon', 'grass', 'flower', 'yellow', 'two.png'),
-                os.path.join(ASSETS_DIR, 'tuxemon', 'grass', 'flower', 'yellow', 'three.png')]
+    _sources = [os.path.join(ASSETS_DIR, 'tiles', 'grass', 'flower', 'red', 'one.png'),
+                os.path.join(ASSETS_DIR, 'tiles', 'grass', 'flower', 'red', 'two.png'),
+                os.path.join(ASSETS_DIR, 'tiles', 'grass', 'flower', 'red', 'three.png'),
+                os.path.join(ASSETS_DIR, 'tiles', 'grass', 'flower', 'blue', 'one.png'),
+                os.path.join(ASSETS_DIR, 'tiles', 'grass', 'flower', 'blue', 'two.png'),
+                os.path.join(ASSETS_DIR, 'tiles', 'grass', 'flower', 'blue', 'three.png'),
+                os.path.join(ASSETS_DIR, 'tiles', 'grass', 'flower', 'yellow', 'one.png'),
+                os.path.join(ASSETS_DIR, 'tiles', 'grass', 'flower', 'yellow', 'two.png'),
+                os.path.join(ASSETS_DIR, 'tiles', 'grass', 'flower', 'yellow', 'three.png')]
     _weights = []
 
 

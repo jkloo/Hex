@@ -1,7 +1,7 @@
 grass:
     sources:
-        - "assets/tuxemon/grass/one.png"
-        - "assets/tuxemon/grass/two.png"
+        - "assets/tiles/grass/one.png"
+        - "assets/tiles/grass/two.png"
     all: 
         - grass
         - flower
@@ -16,14 +16,22 @@ grass:
 
 flower:
     sources:
-        - "assets/tuxemon/grass/flower/*.png"
+        - "assets/tiles/grass/flower/*.png"
     all:
         - grass
         - flower
 
 sand:
     sources:
-        - "assets/tuxemon/sand/one.png"
-        - "assets/tuxemon/sand/two.png"
+        - "assets/tiles/sand/one.png"
+        - "assets/tiles/sand/two.png"
     all:
         - sand
+    left:
+        - 
+    up:
+        -
+    right:
+        -
+    down:
+        -
