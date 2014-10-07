@@ -14,3 +14,12 @@
 
 <ScrollView>:
     size: root.size
+
+<Player>:
+    size: self.grid_scale, self.grid_scale
+    pos: self.grid_scale * self.grid_x, self.grid_scale * self.grid_y
+    canvas:
+        Rectangle:
+            pos: root.pos
+            size: root.size
+            source: root.source

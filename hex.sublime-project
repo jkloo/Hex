@@ -1,9 +1,14 @@
 {
-	"folders":
-	[
-		{
-			"follow_symlinks": true,
-			"path": "."
-		}
-	]
+    "folders":
+    [
+        {
+            "follow_symlinks": true,
+            "path": "."
+        }
+    ],
+    "settings":
+    {
+        "translate_tabs_to_spaces": true,
+        "ensure_newline_at_eof_on_save": true
+    }
 }

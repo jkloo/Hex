@@ -28,10 +28,10 @@ sand:
     all:
         - sand
     left:
-        - 
+        - sandright
     up:
-        -
+        - sandbottom
     right:
-        -
+        - sandleft
     down:
-        -
+        - sandtop
