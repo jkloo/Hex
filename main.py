@@ -10,7 +10,7 @@ from kivy.properties import (NumericProperty,
                              StringProperty)
 
 from tile import FieldTile, GrassTile, SandTile
-from player import Player
+from character import Player
 
 
 class Grid(FloatLayout):

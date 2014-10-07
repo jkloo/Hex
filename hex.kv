@@ -1,8 +1,8 @@
 #:kivy 1.8.0
 
 <Tile>:
-    size: self.scale, self.scale
-    pos: self.grid_x * self.scale, self.grid_y * self.scale
+    size: self.grid_scale, self.grid_scale
+    pos: self.grid_x * self.grid_scale, self.grid_y * self.grid_scale
     canvas:
         Rectangle:
             pos: root.pos
@@ -15,7 +15,7 @@
 <ScrollView>:
     size: root.size
 
-<Player>:
+<Character>:
     size: self.grid_scale, self.grid_scale
     pos: self.grid_scale * self.grid_x, self.grid_scale * self.grid_y
     canvas:

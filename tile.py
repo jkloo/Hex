@@ -14,14 +14,14 @@ from config import ASSETS_DIR
 
 class Tile(Widget):
     _sources = []
-    _weights = []
+    _entry = {'U': True, 'D': True, 'L': True, 'R': True}
     grid_x = NumericProperty(0)
     grid_y = NumericProperty(0)
-    scale = NumericProperty(25)
+    grid_scale = NumericProperty(25)
     source = StringProperty()
 
-    def __init__(self, grid_x, grid_y, scale, *args, **kwargs):
-        self.scale = scale
+    def __init__(self, grid_x, grid_y, grid_scale, *args, **kwargs):
+        self.grid_scale = grid_scale
         self.grid_x = grid_x
         self.grid_y = grid_y
         self.source = random.choice(self._sources)
@@ -32,12 +32,12 @@ class Tile(Widget):
 class GrassTile(Tile):
     _sources = [os.path.join(ASSETS_DIR, 'tiles', 'grass', 'one.png'),
                 os.path.join(ASSETS_DIR, 'tiles', 'grass', 'two.png')]
-    _weights = [50, 50]
 
 
 class SandTile(Tile):
     _sources = [os.path.join(ASSETS_DIR, 'tiles', 'sand', 'one.png'),
                 os.path.join(ASSETS_DIR, 'tiles', 'sand', 'two.png')]
+
 
 class FlowerTile(Tile):
     _sources = [os.path.join(ASSETS_DIR, 'tiles', 'grass', 'flower', 'red', 'one.png'),
@@ -49,9 +49,7 @@ class FlowerTile(Tile):
                 os.path.join(ASSETS_DIR, 'tiles', 'grass', 'flower', 'yellow', 'one.png'),
                 os.path.join(ASSETS_DIR, 'tiles', 'grass', 'flower', 'yellow', 'two.png'),
                 os.path.join(ASSETS_DIR, 'tiles', 'grass', 'flower', 'yellow', 'three.png')]
-    _weights = []
 
 
 class FieldTile(Tile):
     _sources = FlowerTile._sources + GrassTile._sources
-
