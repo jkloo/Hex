@@ -24,6 +24,20 @@ class Character(Widget):
         kwargs['size_hint'] = (None, None)
         super(Character, self).__init__(*args, **kwargs)
 
+    def move(self, direction, amount=1, dt=0.2):
+        capture = True
+        if direction == 'left':
+            self.grid_x -= amount
+        elif direction == 'right':
+            self.grid_x += amount
+        elif direction == 'up':
+            self.grid_y += amount
+        elif direction == 'down':
+            self.grid_y -= amount
+        else:
+            capture = False
+        return capture
+
 
 class Player(Character):
     _animate = {'U': [], 'D': [], 'L': [], 'R': []}
