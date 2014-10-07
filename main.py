@@ -19,7 +19,7 @@ class Grid(FloatLayout):
     tiles_y = NumericProperty()
 
     def build_grid(self, nx, ny, scale):
-        self.player = Player(1, 1, scale)
+        self.player = Player(1, ny - 2, scale)
         self.tiles_x = nx
         self.tiles_y = ny
         self.tiles_scale = scale
@@ -32,7 +32,7 @@ class Grid(FloatLayout):
 class HexApp(App):
     def build(self):
         game = Grid(size_hint=(None, None))
-        game.build_grid(100, 100, 64)
+        game.build_grid(100, 100, 50)
         root = ScrollView(size_hint=(1, 1))
         root.add_widget(game)
         return root

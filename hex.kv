@@ -16,8 +16,8 @@
     size: root.size
 
 <Character>:
-    size: self.grid_scale, self.grid_scale
-    pos: self.grid_scale * self.grid_x, self.grid_scale * self.grid_y
+    size: self.grid_scale, self.grid_scale * 22 / 16
+    pos: self.grid_scale * self.grid_x, self.grid_scale * self.grid_y + 0.2 * self.grid_scale
     canvas:
         Rectangle:
             pos: root.pos
