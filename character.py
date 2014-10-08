@@ -82,7 +82,7 @@ class Player(Character):
                            'assets/characters/hero-down-1.png',
                            'assets/characters/hero-down-2.png',
                            'assets/characters/hero-down-3.png'],
-                  'left': ['assets/characters/alienYellow.png',
+                  'left': ['assets/characters/hero-left-0.png',
                            'assets/characters/alienBeige.png',
                            'assets/characters/alienBlue.png',
                            'assets/characters/alienGreen.png',
