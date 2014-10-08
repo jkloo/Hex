@@ -50,7 +50,7 @@ class HexApp(App):
 
     def _on_key_down(self, keyboard, keycode, text, modifiers):
         if keycode[1] in ['up', 'down', 'left', 'right']:
-            return self.game.player.move(keycode[1], movesteps=5)
+            return self.game.player.move(keycode[1], movesteps=10)
         elif keycode[1] == 'escape':
             keyboard.release()
         return True
