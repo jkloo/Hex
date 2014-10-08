@@ -14,7 +14,7 @@ from config import ASSETS_DIR
 
 class Tile(Widget):
     _sources = []
-    _entry = {'U': True, 'D': True, 'L': True, 'R': True}
+    _entry = {'up': True, 'down': True, 'left': True, 'right': True}
     grid_x = NumericProperty(0)
     grid_y = NumericProperty(0)
     grid_scale = NumericProperty(25)

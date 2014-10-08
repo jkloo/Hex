@@ -14,7 +14,7 @@ Subclassing Tile:
 ```python
 class GrassTile(Tile):
     _sources = []  # image sources.
-    _entry = {'U': True, 'D': True, 'L': True, 'R': True}
+    _entry = {'up': True, 'down': True, 'left': True, 'right': True}
     ...
 ```
 
@@ -28,13 +28,13 @@ class Character(Widget):
 
 ```python
 class PlayerCharacter(Character):
-    _animate = {'U': [], 'D': [], 'L': [], 'R': []}  # animations for character
+    _animate = {'up': [], 'down': [], 'left': [], 'right': []}  # animations for character
     ...
 ```
 
 ```python
 class NonPlayerCharacter(Character):
-    _animate = {'U': [], 'D': [], 'L': [], 'R': []}  # animations for character
+    _animate = {'up': [], 'down': [], 'left': [], 'right': []}  # animations for character
     ...
 ```
 
@@ -42,20 +42,20 @@ class NonPlayerCharacter(Character):
 ```python
 class SingleObject(Widget):
     location = (x, y)  # location on grid
-    _actions = {'U': None, 'D': None, 'L': None, 'R': None}  # action handlers. local (x, y, direction)
+    _actions = {'up': None, 'down': None, 'left': None, 'right': None}  # action handlers. local (x, y, direction)
     ...
 ```
 
 ```python
 class TreeObject(SingleObject):
-    _entry = {'U': False, 'D': False, 'L': False, 'R': False}
+    _entry = {'up': False, 'down': False, 'left': False, 'right': False}
     _sources = []  # image sources
     ...
 ```
 
 ```python
 class BushObject(SingleObject):
-    _entry = {'U': True, 'D': True, 'L': True, 'R': True}
+    _entry = {'up': True, 'down': True, 'left': True, 'right': True}
     _sources = []  # image sources
     ...
 ```

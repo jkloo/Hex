@@ -38,7 +38,7 @@ class HexApp(App):
         self._keyboard = Window.request_keyboard(self._keyboard_closed, self, 'text')
         self._keyboard.bind(on_key_down=self._on_key_down)
         self.game = Grid(size_hint=(None, None))
-        self.game.build_grid(100, 100, 50)
+        self.game.build_grid(20, 20, 50)
         root = ScrollView(size_hint=(1, 1))
         root.add_widget(self.game)
         return root

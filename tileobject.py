@@ -12,7 +12,7 @@ class TileObject(Widget):
     grid_y = NumericProperty(0)
     grid_scale = NumericProperty(25)
     _sources = []
-    _actions = {'U': None, 'D': None, 'L': None, 'R': None}  # action handlers. local (x, y, direction)
+    _actions = {'up': None, 'down': None, 'left': None, 'right': None}  # action handlers. local (x, y, direction)
 
     def __init__(self, grid_x, grid_y, grid_scale, *args, **kwargs):
         self.grid_x = grid_x
