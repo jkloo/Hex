@@ -12,7 +12,6 @@ from kivy.properties import (NumericProperty,
                              BooleanProperty)
 
 class Character(Widget):
-    _sources = []
     _animframe = NumericProperty(0)
     _animating = BooleanProperty(False)
     _animation = {}
@@ -73,9 +72,24 @@ class Character(Widget):
 
 
 class Player(Character):
-    _animation = {'up': ['assets/characters/alienGreen.png', 'assets/characters/alienPink.png', 'assets/characters/alienYellow.png', 'assets/characters/alienBeige.png', 'assets/characters/alienBlue.png'],
-                  'down': ['assets/characters/alienPink.png', 'assets/characters/alienYellow.png', 'assets/characters/alienBeige.png', 'assets/characters/alienBlue.png', 'assets/characters/alienGreen.png'],
-                  'left': ['assets/characters/alienYellow.png', 'assets/characters/alienBeige.png', 'assets/characters/alienBlue.png', 'assets/characters/alienGreen.png', 'assets/characters/alienPink.png'],
-                  'right': ['assets/characters/alienBeige.png', 'assets/characters/alienBlue.png', 'assets/characters/alienGreen.png', 'assets/characters/alienPink.png', 'assets/characters/alienYellow.png']
+    _animation = {'up': ['assets/characters/alienGreen.png',
+                         'assets/characters/alienPink.png',
+                         'assets/characters/alienYellow.png',
+                         'assets/characters/alienBeige.png',
+                         'assets/characters/alienBlue.png'],
+                  'down': ['assets/characters/alienPink.png',
+                           'assets/characters/alienYellow.png',
+                           'assets/characters/alienBeige.png',
+                           'assets/characters/alienBlue.png',
+                           'assets/characters/alienGreen.png'],
+                  'left': ['assets/characters/alienYellow.png',
+                           'assets/characters/alienBeige.png',
+                           'assets/characters/alienBlue.png',
+                           'assets/characters/alienGreen.png',
+                           'assets/characters/alienPink.png'],
+                  'right': ['assets/characters/alienBeige.png',
+                            'assets/characters/alienBlue.png',
+                            'assets/characters/alienGreen.png',
+                            'assets/characters/alienPink.png',
+                            'assets/characters/alienYellow.png']
                   }
-    _sources = ['assets/characters/hero.png']
