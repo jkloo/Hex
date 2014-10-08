@@ -30,7 +30,7 @@ class Character(Widget):
         kwargs['size_hint'] = (None, None)
         super(Character, self).__init__(*args, **kwargs)
 
-    def move(self, direction, dt=0.3):
+    def move(self, direction, dt=0.6):
         capture = False
         if direction in ['left', 'right', 'up', 'down'] and not self._animating:
             capture = True
@@ -65,10 +65,11 @@ class Character(Widget):
                 self.grid_y -= 1
         if self._animframe != 0:
             animlist = self._animation.get(direction)
-            self.source = animlist[(animlist.index(self.source) + 1) % (len(animlist) - 1)]
+            self.source = animlist[(animlist.index(self.source) + 1) % (len(animlist))]
             Clock.schedule_once(partial(self._animate, direction, amount), dt)
         else:
             self._animating = False
+            self.source = self._animation.get(direction)[0]
 
 
 class Player(Character):
@@ -77,11 +78,10 @@ class Player(Character):
                          'assets/characters/alienYellow.png',
                          'assets/characters/alienBeige.png',
                          'assets/characters/alienBlue.png'],
-                  'down': ['assets/characters/alienPink.png',
-                           'assets/characters/alienYellow.png',
-                           'assets/characters/alienBeige.png',
-                           'assets/characters/alienBlue.png',
-                           'assets/characters/alienGreen.png'],
+                  'down': ['assets/characters/hero-down-0.png',
+                           'assets/characters/hero-down-1.png',
+                           'assets/characters/hero-down-2.png',
+                           'assets/characters/hero-down-3.png'],
                   'left': ['assets/characters/alienYellow.png',
                            'assets/characters/alienBeige.png',
                            'assets/characters/alienBlue.png',
