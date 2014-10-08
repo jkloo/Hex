@@ -91,23 +91,23 @@ class Character(Widget):
 
 
 class Player(Character):
-    _animation = {'up': ['assets/characters/alienGreen.png',
-                         'assets/characters/alienPink.png',
-                         'assets/characters/alienYellow.png',
-                         'assets/characters/alienBeige.png',
-                         'assets/characters/alienBlue.png'],
-                  'down': ['assets/characters/hero/hero-down-0.png',
-                           'assets/characters/hero/hero-down-1.png',
-                           'assets/characters/hero/hero-down-2.png',
-                           'assets/characters/hero/hero-down-3.png'],
-                  'left': ['assets/characters/hero/hero-left-0.png',
-                           'assets/characters/alienBeige.png',
-                           'assets/characters/alienBlue.png',
-                           'assets/characters/alienGreen.png',
-                           'assets/characters/alienPink.png'],
-                  'right': ['assets/characters/alienBeige.png',
-                            'assets/characters/alienBlue.png',
-                            'assets/characters/alienGreen.png',
-                            'assets/characters/alienPink.png',
-                            'assets/characters/alienYellow.png']
+    _animation = {'up': ['assets/characters/red/red-up-0.png',
+                         'assets/characters/red/red-up-1.png',
+                         'assets/characters/red/red-up-2.png',
+                         'assets/characters/red/red-up-3.png'],
+
+                  'down': ['assets/characters/red/red-down-0.png',
+                           'assets/characters/red/red-down-1.png',
+                           'assets/characters/red/red-down-2.png',
+                           'assets/characters/red/red-down-3.png'],
+
+                  'left': ['assets/characters/red/red-left-0.png',
+                           'assets/characters/red/red-left-1.png',
+                           'assets/characters/red/red-left-2.png',
+                           'assets/characters/red/red-left-3.png'],
+
+                  'right': ['assets/characters/red/red-right-0.png',
+                            'assets/characters/red/red-right-1.png',
+                            'assets/characters/red/red-right-2.png',
+                            'assets/characters/red/red-right-3.png']
                   }
