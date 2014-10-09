@@ -33,15 +33,16 @@ class Grid(FloatLayout):
 
 class HexApp(App):
     game = ObjectProperty()
+    camera = ObjectProperty()
 
     def build(self):
         self._keyboard = Window.request_keyboard(self._keyboard_closed, self, 'text')
         self._keyboard.bind(on_key_down=self._on_key_down)
         self.game = Grid(size_hint=(None, None))
         self.game.build_grid(20, 20, 50)
-        root = ScrollView(size_hint=(1, 1))
-        root.add_widget(self.game)
-        return root
+        self.camera = ScrollView(size_hint=(1, 1))
+        self.camera.add_widget(self.game)
+        return self.camera
 
     def _keyboard_closed(self):
         print('My keyboard have been closed!')
@@ -50,7 +51,7 @@ class HexApp(App):
 
     def _on_key_down(self, keyboard, keycode, text, modifiers):
         if keycode[1] in ['up', 'down', 'left', 'right']:
-            return self.game.player.move(keycode[1], movesteps=10)
+            return self.game.player.action(keycode[1], movesteps=10)
         elif keycode[1] == 'escape':
             keyboard.release()
         return True

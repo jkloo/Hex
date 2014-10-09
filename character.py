@@ -32,23 +32,23 @@ class Character(Widget):
         kwargs['size_hint'] = (None, None)
         super(Character, self).__init__(*args, **kwargs)
 
-    def move(self, direction, dt=0.3, movesteps=0):
+    def action(self, action, dt=0.3, movesteps=0):
         capture = False
-        if direction in ['left', 'right', 'up', 'down'] and not self._animating and not self._moving:
+        if action in ['left', 'right', 'up', 'down'] and not self._animating and not self._moving:
             capture = True
-            if self.facing == direction:
+            if self.facing == action:
                 self._animating = True
-                self._animframe = len(self._animation.get(direction, []))
+                self._animframe = len(self._animation.get(action, []))
                 self._moving = True
                 self._moveframe = movesteps or self._animframe
                 amount = self.grid_scale / self._moveframe
                 anim_dt = dt / self._animframe
                 move_dt = dt / self._moveframe
-                Clock.schedule_once(partial(self._move, direction, amount), move_dt)
-                Clock.schedule_once(partial(self._animate, direction), anim_dt)
+                Clock.schedule_once(partial(self._move, action, amount), move_dt)
+                Clock.schedule_once(partial(self._animate, action), anim_dt)
             else:
-                self.source = self._animation.get(direction)[0]
-                self.facing = direction
+                self.source = self._animation.get(action)[0]
+                self.facing = action
         return capture
 
     def _move(self, direction, amount, dt):
