@@ -36,11 +36,31 @@ class Tile(Widget):
     def exit(self, direction):
         return self._exit.get(direction, True)
 
+    def neighbor(self, direction):
+        n = [0, 0]
+        if direction == 'left':
+            n = [-1, 0]
+        elif direction == 'right':
+            n = [1, 0]
+        elif direction == 'up':
+            n = [0, 1]
+        elif direction == 'down':
+            n = [0, -1]
+        new_x = self.grid_x + n[0]
+        new_y = self.grid_y + n[1]
+        try:
+            new_tile = self.parent.tiles[new_y][new_x]
+        except IndexError:
+            new_tile = None
+        finally:
+            return new_tile
+
 
 
 class GrassTile(Tile):
     _sources = [os.path.join(ASSETS_DIR, 'tiles', 'grass', 'one.png'),
                 os.path.join(ASSETS_DIR, 'tiles', 'grass', 'two.png')]
+    _entry = {'up': False, 'down': False, 'left': False, 'right': False}
 
 
 class SandTile(Tile):

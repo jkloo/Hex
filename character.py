@@ -34,7 +34,7 @@ class Character(Widget):
 
     def action(self, action, dt=0.3, movesteps=0):
         capture = False
-        if action in ['left', 'right', 'up', 'down'] and not self._animating and not self._moving:
+        if not self._animating and not self._moving:
             capture = True
             if self.facing == action:
                 self._animating = True
@@ -42,11 +42,13 @@ class Character(Widget):
                 anim_dt = dt / self._animframe
                 tile = self.parent.tiles[self.grid_y][self.grid_x]
                 if tile.exit(action):
-                    self._moving = True
-                    self._moveframe = movesteps or self._animframe
-                    amount = self.grid_scale / self._moveframe
-                    move_dt = dt / self._moveframe
-                    Clock.schedule_once(partial(self._move, action, amount), move_dt)
+                    next_tile = tile.neighbor(action)
+                    if next_tile and next_tile.enter(action):
+                        self._moving = True
+                        self._moveframe = movesteps or self._animframe
+                        amount = self.grid_scale / self._moveframe
+                        move_dt = dt / self._moveframe
+                        Clock.schedule_once(partial(self._move, action, amount), move_dt)
                 Clock.schedule_once(partial(self._animate, action), anim_dt)
             else:
                 self.source = self._animation.get(action)[0]
