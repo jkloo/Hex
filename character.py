@@ -39,12 +39,14 @@ class Character(Widget):
             if self.facing == action:
                 self._animating = True
                 self._animframe = len(self._animation.get(action, []))
-                self._moving = True
-                self._moveframe = movesteps or self._animframe
-                amount = self.grid_scale / self._moveframe
                 anim_dt = dt / self._animframe
-                move_dt = dt / self._moveframe
-                Clock.schedule_once(partial(self._move, action, amount), move_dt)
+                tile = self.parent.tiles[self.grid_y][self.grid_x]
+                if tile.exit(action):
+                    self._moving = True
+                    self._moveframe = movesteps or self._animframe
+                    amount = self.grid_scale / self._moveframe
+                    move_dt = dt / self._moveframe
+                    Clock.schedule_once(partial(self._move, action, amount), move_dt)
                 Clock.schedule_once(partial(self._animate, action), anim_dt)
             else:
                 self.source = self._animation.get(action)[0]

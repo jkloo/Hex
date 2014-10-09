@@ -7,14 +7,16 @@ import random
 
 from kivy.uix.widget import Widget
 from kivy.properties import (NumericProperty,
-                             StringProperty)
+                             StringProperty,
+                             DictProperty)
 
 from config import ASSETS_DIR
 
 
 class Tile(Widget):
     _sources = []
-    _entry = {'up': True, 'down': True, 'left': True, 'right': True}
+    _entry = DictProperty({'up': True, 'down': True, 'left': True, 'right': True})
+    _exit = DictProperty({'up': True, 'down': True, 'left': True, 'right': True})
     grid_x = NumericProperty(0)
     grid_y = NumericProperty(0)
     grid_scale = NumericProperty(25)
@@ -27,6 +29,13 @@ class Tile(Widget):
         self.source = random.choice(self._sources)
         kwargs['size_hint'] = (None, None)
         super(Tile, self).__init__(*args, **kwargs)
+
+    def enter(self, direction):
+        return self._entry.get(direction, False)
+
+    def exit(self, direction):
+        return self._exit.get(direction, True)
+
 
 
 class GrassTile(Tile):

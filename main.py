@@ -9,13 +9,15 @@ from kivy.uix.widget import Widget
 from kivy.core.window import Window
 from kivy.properties import (NumericProperty,
                              StringProperty,
-                             ObjectProperty)
+                             ObjectProperty,
+                             ListProperty)
 
 from tile import FieldTile, GrassTile, SandTile
 from character import Player
 
 
 class Grid(FloatLayout):
+    tiles = ListProperty()
     tiles_scale = NumericProperty()
     tiles_x = NumericProperty()
     tiles_y = NumericProperty()
@@ -25,9 +27,24 @@ class Grid(FloatLayout):
         self.tiles_x = nx
         self.tiles_y = ny
         self.tiles_scale = scale
+        self.tiles = []
         for j in range(ny):
+            self.tiles.append([])
             for i in range(nx):
-                self.add_widget(FieldTile(i, j, scale))
+                tile = FieldTile(i, j, scale)
+
+                if j == 0:
+                    tile._exit['down'] = False
+                elif j == (ny - 1):
+                    tile._exit['up'] = False
+
+                if i == 0:
+                    tile._exit['left'] = False
+                elif i == (nx - 1):
+                    tile._exit['right'] = False
+
+                self.tiles[j].append(tile)
+                self.add_widget(tile)
         self.add_widget(self.player)
 
 
