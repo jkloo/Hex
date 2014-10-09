@@ -2,6 +2,7 @@
 
 """Character module. """
 
+import os
 import random
 from functools import partial
 
@@ -10,6 +11,9 @@ from kivy.uix.widget import Widget
 from kivy.properties import (NumericProperty,
                              StringProperty,
                              BooleanProperty)
+
+from config import ASSETS_DIR
+
 
 class Character(Widget):
     _animframe = NumericProperty(0)
@@ -95,23 +99,23 @@ class Character(Widget):
 
 
 class Player(Character):
-    _animation = {'up': ['assets/characters/red/red-up-0.png',
-                         'assets/characters/red/red-up-1.png',
-                         'assets/characters/red/red-up-2.png',
-                         'assets/characters/red/red-up-3.png'],
+    _animation = {'up': [os.path.join(ASSETS_DIR, 'characters', 'red', 'red-up-0.png'),
+                         os.path.join(ASSETS_DIR, 'characters', 'red', 'red-up-1.png'),
+                         os.path.join(ASSETS_DIR, 'characters', 'red', 'red-up-2.png'),
+                         os.path.join(ASSETS_DIR, 'characters', 'red', 'red-up-3.png')],
 
-                  'down': ['assets/characters/red/red-down-0.png',
-                           'assets/characters/red/red-down-1.png',
-                           'assets/characters/red/red-down-2.png',
-                           'assets/characters/red/red-down-3.png'],
+                  'down': [os.path.join(ASSETS_DIR, 'characters', 'red', 'red-down-0.png'),
+                           os.path.join(ASSETS_DIR, 'characters', 'red', 'red-down-1.png'),
+                           os.path.join(ASSETS_DIR, 'characters', 'red', 'red-down-2.png'),
+                           os.path.join(ASSETS_DIR, 'characters', 'red', 'red-down-3.png')],
 
-                  'left': ['assets/characters/red/red-left-0.png',
-                           'assets/characters/red/red-left-1.png',
-                           'assets/characters/red/red-left-2.png',
-                           'assets/characters/red/red-left-3.png'],
+                  'left': [os.path.join(ASSETS_DIR, 'characters', 'red', 'red-left-0.png'),
+                           os.path.join(ASSETS_DIR, 'characters', 'red', 'red-left-1.png'),
+                           os.path.join(ASSETS_DIR, 'characters', 'red', 'red-left-2.png'),
+                           os.path.join(ASSETS_DIR, 'characters', 'red', 'red-left-3.png')],
 
-                  'right': ['assets/characters/red/red-right-0.png',
-                            'assets/characters/red/red-right-1.png',
-                            'assets/characters/red/red-right-2.png',
-                            'assets/characters/red/red-right-3.png']
+                  'right': [os.path.join(ASSETS_DIR, 'characters', 'red', 'red-right-0.png'),
+                            os.path.join(ASSETS_DIR, 'characters', 'red', 'red-right-1.png'),
+                            os.path.join(ASSETS_DIR, 'characters', 'red', 'red-right-2.png'),
+                            os.path.join(ASSETS_DIR, 'characters', 'red', 'red-right-3.png')]
                   }

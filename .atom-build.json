@@ -1,6 +1,6 @@
 {
 "cmd": "kivy",
-  "args": [ "-u", "{PROJECT_PATH}/main.py" ],
+  "args": [ "-u", "{PROJECT_PATH}/hex/main.py" ],
   "sh": true,
   "cwd": "{PROJECT_PATH}"
 }
